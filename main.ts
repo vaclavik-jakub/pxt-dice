@@ -8,10 +8,7 @@ basic.forever(function() {
         basic.pause(200)
     }
     if (input.buttonIsPressed(Button.B)){
-        (number >= 10)
-    }
-        number += 1
-    }
+       if (number >= 10
     
 
 // input.onButtonPressed(Button.A, function() {
