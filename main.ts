@@ -1,39 +1,44 @@
-let number = 0
-basic.showNumber(number)
+let number1 = 4
+let previewStateAPressedA = input.buttonIsPressed(Button.A)
+let previewStateAPressedB = input.buttonIsPressed(Button.B)
 
-basic.forever(function() {
-    if (input.buttonIsPressed(Button.A)){
-        number -= 1
-        whaleysans.showNumber(number)
-        basic.pause(200)
+let makej2A = () => {
+    number1 -= 1
+    whaleysans.showNumber(number1)
+}
+
+let makej2B = () => {
+    number1 += 1
+    whaleysans.showNumber(number1)
+}
+
+let makej = function () { 
+    if (input.buttonIsPressed(Button.A)) {
+        //let actualStateA = true
+       //if (previewStateAPressed ==  false && actualStateA == true)
+        if (!previewStateAPressedA) 
+        {
+            number1 -= 1
+            previewStateAPressedA = true
+        }
+    } else {
+        previewStateAPressedA = false
     }
-    if (input.buttonIsPressed(Button.B)){
-       if (number >= 10
-    
 
-// input.onButtonPressed(Button.A, function() {
-//     if (number > 0)
-//     {
-//         number -= 1
-//     }
-//     whaleysans.showNumber(number)
-// })
-    
-// input.onButtonPressed(Button.B, function() {
-//     if (number < 10) {
-//         number += 1
-
-//     }
-//     whaleysans.showNumber(number)
-// })
+    if (input.buttonIsPressed(Button.B))
+        
+        if (!previewStateAPressedB)
+    {
+        number1 += 1
+        previewStateAPressedB = true 
+    } 
+    else {
+        previewStateAPressedB = false
+    }
+    whaleysans.showNumber(number1)
+}
 
 
-   
-
-
-
-
-
-
-
+input.onButtonPressed(Button.A, makej2A) //registrace k události
+input.onButtonPressed(Button.B, makej2B)
 
